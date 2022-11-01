@@ -1,0 +1,30 @@
+body {
+  background: linear-gradient(to right, #d74177, #ffe98a);
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.wrapper {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  box-sizing: border-box;
+  margin: 10px;
+  max-width: 33.3%;
+  padding: 5px 5px 5px 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 10px #31c5d7;
+  transition: width 2s, background-color 1s, box-shadow 1s;
+  border-radius: 10px;
+  color: black;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 1);
+}
