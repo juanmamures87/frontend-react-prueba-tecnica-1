@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import PostList from "./component/PostList";
 import Post from "./types";
@@ -14,9 +14,16 @@ function App() {
   }, []);
 
   return (
-    <section>
-      <PostList posts={posts} />
-    </section>
+    <>
+      <nav className="navbar">
+        <h1>POSTS DEL MUNDO</h1>
+      </nav>
+      <main className="main">
+        <section>
+          <PostList posts={posts} />
+        </section>
+      </main>
+    </>
   );
 }
 
