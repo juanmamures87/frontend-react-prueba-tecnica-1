@@ -31,6 +31,7 @@ Implementación
 
 Aquí se valorará todo lo relacionado a nivel de código. Esta parte es mucho más compleja de
 especificar y por tanto marcaremos ciertos objetivos necesarios y opcionales.
+
 ● Objetivos necesarios
   ○ Código totalmente en TypeScript.
   ○ Tipado sin tipos any.
