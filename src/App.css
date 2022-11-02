@@ -5,6 +5,8 @@
 }
 
 :root {
+  --center: center;
+  --cursor: pointer;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
   display: grid;
   grid-template:
     "navbar navbar " 10vh
-    "main main " 60vh/
+    "main main " auto/
     30% 70%;
 }
 
@@ -27,9 +29,10 @@ body {
   border: 2px solid rgb(185, 185, 235);
   border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+  justify-content: var(--center);
+  align-items: var(--center);
+  position: sticky;
+  top: 0;
 }
 
 .main {
@@ -54,7 +57,7 @@ body {
   transition: background-color 1s, box-shadow 1s;
   border-radius: 10px;
   color: black;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 .card:hover {
@@ -62,32 +65,48 @@ body {
   background-color: rgba(255, 255, 255, 1);
 }
 
+.singlePost__numPost {
+  float: right;
+  margin-right: 2%;
+}
+
+.information {
+  float: right;
+  width: 50%;
+  position: sticky;
+  top: 20%;
+}
+
 .singlePost {
-  width: 40%;
+  width: 80%;
   padding: 5px 5px 5px 5px;
-  margin-right: 5%;
+  margin: auto;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   color: black;
-  position: sticky;
-  top: 50px;
-  float: right;
 }
 
-.buttonEliminar {
+.singlePost h1,
+h2,
+h4,
+p {
+  margin-bottom: 5%;
+}
+
+.singlePost__buttonEliminar {
   background-color: white;
   color: black;
   border: 2px solid #f44336;
   padding: 8px 16px;
-  text-align: center;
+  text-align: var(--center);
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
-.buttonEliminar:hover {
+.singlePost__buttonEliminar:hover {
   background-color: #f44336;
   color: white;
 }
@@ -95,38 +114,57 @@ body {
 .aviso {
   background-color: white;
   border-radius: 5px;
-  width: 40%;
-  height: 15%;
-  position: absolute;
-  top: 20%;
+  width: 70%;
+  height: 100px;
   margin: auto;
+  margin-top: 20%;
 }
 
 .aviso h3 {
-  text-align: center;
+  text-align: var(--center);
 }
 
 .aviso button {
   width: 20%;
   height: 40%;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 .botonesAviso {
-  border: 2px solid red;
   width: 100%;
   height: 80%;
   display: flex;
+  margin-top: -2%;
   column-gap: 10%;
-  justify-content: center;
-  align-items: center;
+  justify-content: var(--center);
+  align-items: var(--center);
 }
 
-.avisoEliminar {
+.botonesAviso__avisoEliminar {
   background-color: orangered;
 }
 
-.avisoCancelar {
+.botonesAviso__avisoCancelar {
   background-color: lightgray;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .information {
+    top: 10%;
+  }
+  .aviso {
+    font-size: small;
+    width: 100%;
+  }
+  .botonesAviso {
+    margin-top: -10%;
+  }
+  .aviso button {
+    width: 50%;
+  }
+  .singlePost__numPost {
+    float: left;
+    margin-right: 2%;
+  }
 }

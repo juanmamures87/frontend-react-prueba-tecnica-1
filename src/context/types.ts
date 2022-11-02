@@ -8,5 +8,9 @@ export type Post = {
 export type PostContextType = {
   posts: Array<Post>;
   setPosts: (value: Array<Post>) => void;
-  deletePost: (id: Post) => void;
+  deletePost: (id: number) => void;
+  idBorrar: number;
+  setIdBorrar: (value: number) => void;
+  modal: boolean;
+  setModal: (value: boolean) => void;
 };

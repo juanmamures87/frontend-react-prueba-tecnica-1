@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
 import { PostContext } from "../context/PostContext";
 import { PostContextType } from "../context/types";
-import AvisoEliminar from "./AvisoEliminar";
 import PostCard from "./PostCard";
 import SinglePost from "./SinglePost";
 
 function PostList() {
-  const { posts } = useContext(PostContext) as PostContextType;
+  const { posts, setModal } = useContext(PostContext) as PostContextType;
   const [idPost, setIdPost] = useState<number>(0);
 
   function handlePost(idBuscar: number) {
@@ -17,7 +16,7 @@ function PostList() {
     }
   }
 
-  let singlePost;
+  let singlePost: JSX.Element | null;
   if (idPost != 0) {
     singlePost = <SinglePost posts={posts} idBuscar={idPost} />;
   } else {
@@ -27,11 +26,13 @@ function PostList() {
   return (
     <>
       {singlePost}
-      <AvisoEliminar />
       <div className="wrapper">
         {posts.map((post) => (
           <div
-            onClick={(e) => handlePost(post.id)}
+            onClick={(e) => {
+              handlePost(post.id);
+              setModal(false);
+            }}
             className="card"
             key={post.id}
           >

@@ -1,33 +1,48 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PostContext } from "../context/PostContext";
 import { Post, PostContextType } from "../context/types";
+import AvisoEliminar from "./AvisoEliminar";
 
 interface Props {
-  posts: Array<Post>;
   idBuscar: number;
 }
 
-function SinglePost({ posts, idBuscar }: Props) {
+function SinglePost({ idBuscar }: Props) {
+  const { setIdBorrar, modal, setModal, posts } = useContext(
+    PostContext
+  ) as PostContextType;
   const singlePost = posts.filter((id) => id.id === idBuscar);
-  const { deletePost } = useContext(PostContext) as PostContextType;
+
+  let divModal: JSX.Element | null;
+  if (modal) {
+    divModal = <AvisoEliminar />;
+  } else {
+    divModal = null;
+  }
 
   return (
-    <>
+    <div className="information">
       {singlePost.map((post) => (
         <div key={post.id} className="singlePost">
-          <h1>{post.title}</h1>
-          <h2>{post.userId}</h2>
-          <h2>{post.id}</h2>
+          <h1>
+            <u>{post.title}</u>
+          </h1>
+          <h4 className="singlePost__numPost">Nº.Post: {post.id}</h4>
+          <h2>Usuario: {post.userId}</h2>
           <p>{post.body}</p>
           <button
-            onClick={() => deletePost(post)}
-            className="button buttonEliminar"
+            onClick={() => {
+              setModal(true);
+              setIdBorrar(post.id);
+            }}
+            className="singlePost__buttonEliminar"
           >
             Eliminar Post
           </button>
         </div>
       ))}
-    </>
+      {divModal}
+    </div>
   );
 }
 
