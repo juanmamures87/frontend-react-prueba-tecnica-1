@@ -1,14 +1,12 @@
-import { useState } from "react";
-import { render } from "react-dom";
-import Post from "../types";
+import { useContext, useState } from "react";
+import { PostContext } from "../context/PostContext";
+import { PostContextType } from "../context/types";
+import AvisoEliminar from "./AvisoEliminar";
 import PostCard from "./PostCard";
 import SinglePost from "./SinglePost";
 
-interface Props {
-  posts: Array<Post>;
-}
-
-function PostList({ posts }: Props) {
+function PostList() {
+  const { posts } = useContext(PostContext) as PostContextType;
   const [idPost, setIdPost] = useState<number>(0);
 
   function handlePost(idBuscar: number) {
@@ -29,6 +27,7 @@ function PostList({ posts }: Props) {
   return (
     <>
       {singlePost}
+      <AvisoEliminar />
       <div className="wrapper">
         {posts.map((post) => (
           <div
@@ -36,7 +35,12 @@ function PostList({ posts }: Props) {
             className="card"
             key={post.id}
           >
-            <PostCard post={post} />
+            <PostCard
+              body={post.body}
+              id={post.id}
+              title={post.title}
+              userId={post.userId}
+            />
           </div>
         ))}
       </div>

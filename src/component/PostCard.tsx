@@ -1,10 +1,6 @@
-import Post from "../types";
+import { Post } from "../context/types";
 
-interface Props {
-  post: Post;
-}
-
-function PostCard({ post }: Props) {
+function PostCard(post: Post) {
   return (
     <div>
       <h1>{post.title}</h1>
