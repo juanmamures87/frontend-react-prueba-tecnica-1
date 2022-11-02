@@ -33,6 +33,7 @@ Aquí se valorará todo lo relacionado a nivel de código. Esta parte es mucho m
 especificar y por tanto marcaremos ciertos objetivos necesarios y opcionales.
 
 ● Objetivos necesarios
+
   ○ Código totalmente en TypeScript.
   ○ Tipado sin tipos any.
   ○ Código en React
@@ -44,6 +45,7 @@ que proporcione un dropdown para el card estaría permitido, una librería que c
 card al completo no).
 
 ● Opcionales
+
   ○ Testing unitario
   ○ Testing e2e
   ○ Estilos scss y variables css
@@ -65,11 +67,16 @@ Además de la funcionalidad descrita, se propone una serie de ampliaciones por s
 ve interesado en la prueba y quiere extender la funcionalidad de la plataforma:
 
 ● Edición de posts
+
 ● Layout básico
+
   ○ Navbar
   ○ Sidebar
   ○ Content
   ○ Breadcrumbs
+  
 ● Pantalla de login
+
 ● Paleta de colores y guía de estilos
+
 ● Estilos CSS y animaciones
