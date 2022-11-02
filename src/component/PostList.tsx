@@ -18,7 +18,7 @@ function PostList() {
 
   let singlePost: JSX.Element | null;
   if (idPost != 0) {
-    singlePost = <SinglePost posts={posts} idBuscar={idPost} />;
+    singlePost = <SinglePost idBuscar={idPost} />;
   } else {
     singlePost = null;
   }
