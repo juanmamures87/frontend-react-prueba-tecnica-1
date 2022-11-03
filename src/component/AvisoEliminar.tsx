@@ -20,7 +20,10 @@ function AvisoEliminar() {
         >
           Eliminar
         </button>
-        <button onClick={() => setModal(false)} className="botonesAviso__avisoCancelar">
+        <button
+          onClick={() => setModal(false)}
+          className="botonesAviso__avisoCancelar"
+        >
           Cancelar
         </button>
       </div>

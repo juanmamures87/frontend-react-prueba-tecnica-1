@@ -4,11 +4,6 @@
   padding: 0;
 }
 
-:root {
-  --center: center;
-  --cursor: pointer;
-}
-
 body {
   background: linear-gradient(to right, #d74177, #ffe98a);
 }
@@ -29,10 +24,25 @@ body {
   border: 2px solid rgb(185, 185, 235);
   border-radius: 5px;
   display: flex;
-  justify-content: var(--center);
-  align-items: var(--center);
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
+}
+
+.navbar__titulo {
+  margin-left: 5%;
+  font-size: 2em;
+}
+
+.navbar__autor {
+  margin-right: 5%;
+}
+
+.navbar_imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -42,7 +52,8 @@ body {
 }
 
 .wrapper {
-  width: 50%;
+  width: 42%;
+  margin-left: 4%;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -57,7 +68,7 @@ body {
   transition: background-color 1s, box-shadow 1s;
   border-radius: 10px;
   color: black;
-  cursor: var(--cursor);
+  cursor: pointer;
 }
 
 .card:hover {
@@ -71,6 +82,7 @@ body {
 }
 
 .information {
+  margin-right: 3%;
   float: right;
   width: 50%;
   position: sticky;
@@ -98,12 +110,12 @@ p {
   color: black;
   border: 2px solid #f44336;
   padding: 8px 16px;
-  text-align: var(--center);
+  text-align: center;
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
-  cursor: var(--cursor);
+  cursor: pointer;
 }
 
 .singlePost__buttonEliminar:hover {
@@ -121,14 +133,14 @@ p {
 }
 
 .aviso h3 {
-  text-align: var(--center);
+  text-align: center;
 }
 
 .aviso button {
   width: 20%;
   height: 40%;
   border-radius: 5px;
-  cursor: var(--cursor);
+  cursor: pointer;
 }
 
 .botonesAviso {
@@ -137,8 +149,8 @@ p {
   display: flex;
   margin-top: -2%;
   column-gap: 10%;
-  justify-content: var(--center);
-  align-items: var(--center);
+  justify-content: center;
+  align-items: center;
 }
 
 .botonesAviso__avisoEliminar {
@@ -166,5 +178,12 @@ p {
   .singlePost__numPost {
     float: left;
     margin-right: 2%;
+  }
+  .navbar__titulo {
+    margin-left: 0;
+    font-size: 1.2em;
+  }
+  .navbar_imagen img {
+    width: 20%;
   }
 }
