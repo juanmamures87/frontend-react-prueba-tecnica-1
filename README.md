@@ -1,5 +1,7 @@
 Prueba técnica para puesto de trabajo de desarrollador Frontend en Cleverpy.
 
+Enlace para ver la aplicación directamente desplegada gracias a Github pages y al despliegue de sitios estáticos de Vite, que es la herramienta que he utilizado para crear el proyecto: 
+
 Descripción de la prueba.
 
 La prueba consiste en diseñar, implementar y conectar un plataforma con “cards” para la
