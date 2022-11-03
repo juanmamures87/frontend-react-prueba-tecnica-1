@@ -1,6 +1,6 @@
 Prueba técnica para puesto de trabajo de desarrollador Frontend en Cleverpy.
 
-Enlace para ver la aplicación directamente desplegada gracias a Github pages y al despliegue de sitios estáticos de Vite, que es la herramienta que he utilizado para crear el proyecto: 
+Enlace para ver la aplicación directamente desplegada gracias a Github pages y al despliegue de sitios estáticos de Vite, que es la herramienta que he utilizado para crear el proyecto: https://juanmamures87.github.io/frontend-react-prueba-tecnica-1/
 
 Descripción de la prueba.
 
